@@ -4,9 +4,11 @@ import './index.css'
 function App() {
 
   return (
-    <>
+    <div className='lg:bg-dark'>
+      <div>
       <Layout/>
-    </>
+      </div>
+    </div>
   )
 }
 
