@@ -1,9 +1,10 @@
 import { useState } from "react"; 
 import axios from "axios";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 export const Form = () => {
-
+    const navigate = useNavigate('');
     const [action, setAction] = useState('Sign Up'); 
     const [dataUser, setDataUser] = useState({
         username: '',
@@ -15,30 +16,32 @@ export const Form = () => {
     const handleChange = (e) => {
         setDataUser({...dataUser, [e.target.name]: e.target.value });
     }
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            const baseurl = "https://api-mini-socmed.notneet.my.id";
-
-            let url = `${baseurl}/auth/login`;
-            let paylod = {
-                username: dataUser.username,
-                email: dataUser.email,
-                password: dataUser.password
+            try {
+                const baseurl = "https://api-mini-socmed.notneet.my.id";
+    
+                let url = `${baseurl}/auth/login`;
+                let paylod = {
+                    username: dataUser.username,
+                    email: dataUser.email,
+                    password: dataUser.password
+                }
+    
+               
+                    const ress = await axios.post(url, paylod);
+    
+                    if(ress) {
+                        navigate('/home')
+                    } else {
+                        alert('failed to submit')    
+                    }             
+    
+            } catch (err) {
+                console.log(err);
             }
-
-            const ress = await axios.post(url, paylod);
-            if(ress) {
-                return redirect('/profile')
-            } else {
-                console.log('failed to submit');
-            }
-
-        } catch (err) {
-            console.log(err);
-        }
     } 
 
   return (
