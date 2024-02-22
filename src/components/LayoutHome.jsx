@@ -4,6 +4,7 @@ import { DescriptionAcound } from './DescriptionAcound';
 import { CardImg } from './cardImg';
 import { DescriptionProfile } from './DescriptionProfile';
 import { ButtonNavigate } from './ButtonNavigate';
+import BottomNav from './BottomNav';
 
 export const LayoutHome = () => {
 
@@ -20,6 +21,7 @@ export const LayoutHome = () => {
                     </div>
                     <CardImg />
             </div>
+            <BottomNav />
         </main>
     )
 }
