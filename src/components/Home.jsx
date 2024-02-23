@@ -1,10 +1,10 @@
-import { Header } from "./Header";
+import { NavBar } from "./NavBar";
 import { LayoutHome } from "./LayoutHome"; 
 
 export const Home = () => {
     return (
         <>         
-            <Header />
+            <NavBar />
             <LayoutHome />
         </>
     )

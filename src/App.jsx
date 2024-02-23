@@ -3,6 +3,7 @@ import './index.css'
 import LayoutForm from './components/LayoutForm';
 import { Home } from './components/Home';
 import { EditProfile } from './components/EditProfile';
+import { AploadPost } from './components/AploadPost';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path='/' element={<LayoutForm/>}/>
           <Route path='/home' element={<Home/>}/>
           <Route path='/editProfile' element={<EditProfile />}/>
+          <Route path='/aploadPost' element={<AploadPost />}/>
         </Routes>
       </Router>
     </div>

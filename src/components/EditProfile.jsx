@@ -1,7 +1,6 @@
-import BgIcons from '../assets/icons8-photo-64.png';
 import { useNavigate } from "react-router-dom";
 import { AiOutlineImport } from "react-icons/ai";
-import { ImageEditProfile } from './ImageEditProfile';
+import { Headers } from './Headers';
 import { InputEditProfile } from './InputEditProfile';
 import { InputEditAccount } from './InputEditAccount';
 import BottomNav from './BottomNav';
@@ -21,13 +20,8 @@ export const EditProfile = () => {
                     </div>
                 </nav>
             </header>
-            <div className="rounded-t-lg mt-[4.8rem] w-full h-44 object-cover bg-slate-700">
-                <img src={BgIcons} alt="baground" className="pt-10 mx-auto " />
-            </div>
-            <div className='relative mt-[24rem]'>
-                <ImageEditProfile className=''/> 
-            </div>
-                <div className='mt-10 p-4 bg-slate-300 max-w-[90%] mx-auto mb-20'>
+            <Headers />
+                <div className='mt-[10rem] p-4 bg-slate-300 max-w-[90%] mx-auto mb-20'>
                     <InputEditProfile />
                     <InputEditAccount />     
                 </div>  

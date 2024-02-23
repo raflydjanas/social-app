@@ -1,6 +1,7 @@
 import { useState } from "react"; 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 
 export const Form = () => {
@@ -12,10 +13,18 @@ export const Form = () => {
         password: '',
     });
    
-
     const handleChange = (e) => {
         setDataUser({...dataUser, [e.target.name]: e.target.value });
     }
+
+    const [accessToken, setAccessToken] = useState('');
+
+    useEffect(() => {
+        const token = localStorage.getItem('accessToken');
+        if(token) {
+            setAccessToken(token);
+        }
+    }, [])
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,9 +38,11 @@ export const Form = () => {
                     email: dataUser.email,
                     password: dataUser.password
                 }
-    
                
-                    const ress = await axios.post(url, paylod);
+                    const ress = await axios.post(url, paylod, 
+                    {headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }});
     
                     if(ress) {
                         navigate('/home')
