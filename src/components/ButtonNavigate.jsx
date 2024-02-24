@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "./Button";
 export const ButtonNavigate = () => {
 
@@ -5,9 +6,16 @@ export const ButtonNavigate = () => {
 
         <div className="bg-white mt-6 mx-auto w-[70%] rounded-full">
          <div className="flex justify-between items-center gap-4 p-4">          
-            <Button />
-            <Button />
-            <Button />
+            <Button>
+                <Link to='/home'/>
+            </Button>
+            <Button>
+                
+            </Button>
+            <Button>
+
+            </Button>
+           
          </div>
         </div>
     )
