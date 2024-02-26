@@ -1,16 +1,16 @@
 import beckground from '../assets/bg.jpg';
-import { Cound } from './Cound';
-import { DescriptionAcound } from './DescriptionAcound';
-import { CardImg } from './cardImg';
-import { DescriptionProfile } from './DescriptionProfile';
-import { ButtonNavigate } from './ButtonNavigate';
+import  DescriptionProfile from './DescriptionProfile';
+import  Cound  from './Cound';
+import  DescriptionAcound  from './DescriptionAcound';
+import  ButtonNavigate  from './ButtonNavigate';
+import  CardImg from './cardImg';
 import BottomNav from './BottomNav';
 
-export const LayoutHome = () => {
+ const LayoutHome = () => {
 
     return (
         <main>
-            <div className="bg-slate-900 relative">
+            <div className="bg-dark relative">
                 <img src={beckground} alt="baground" className="rounded-t-lg mt-[4.8rem] w-full h-44 object-cover" />
                     <div className="relative h-[26rem]">                         
                         <DescriptionProfile />
@@ -25,3 +25,5 @@ export const LayoutHome = () => {
         </main>
     )
 }
+
+export default LayoutHome;

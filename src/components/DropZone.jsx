@@ -1,6 +1,6 @@
 import { useDropzone } from 'react-dropzone';
 
-export const DropZone = () => {
+const DropZone = () => {
     const {acceptedFiles, getRootProps, getInputProps} = useDropzone();
     const files = acceptedFiles.map(file => (
         <li key={file.path}>
@@ -11,10 +11,12 @@ export const DropZone = () => {
     return (
         <>  
             <div {...getRootProps({className: 'dropzone'})} className=" border-4 border-purple p-4">
-                <input {...getInputProps()} className='bg-slate-50' />
-                <p>Drag drop some files here, or click to select files</p>
+                <input {...getInputProps()} className='bg-slate-700' />
+                <p className='text-white'>Drag drop some files here, or click to select files</p>
             </div>
             <li>{files}</li>
         </>
     )
 }
+
+export default DropZone;

@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
 import { AiOutlineImport } from "react-icons/ai";
-import { Headers } from './Headers';
-import { InputEditProfile } from './InputEditProfile';
-import { InputEditAccount } from './InputEditAccount';
-import BottomNav from './BottomNav';
+import  Headers  from '../components/Headers';
+import  InputEditProfile  from '../components/InputEditProfile';
+import  InputEditAccount   from '../components/InputEditAccount';
+import BottomNav from '../components/BottomNav';
+import MyApp from "../components/Elements/MyApp/MyApp";
 
 
-export const EditProfile = () => {
+const EditProfile = () => {
 
     return (
-        <>
-          <header className="bg-transparent p-5 rounded border-b-2 border-purple fixed top-0 right-0 left-0">
+        <div className="bg-dark">
+          <header className="bg-dark p-5 rounded border-b-2 border-purple fixed top-0 right-0 left-0">
                 <nav className="flex justify-between items-center">
-                    <h1 className='text-purple font-bold text-2xl'>My app</h1>
+                    <MyApp />
                     <div  className="flex gap-3  text-white hover:text-purple cursor-pointer">
                         <Link to='/home' className="text-base">
                             back to home
@@ -22,11 +23,13 @@ export const EditProfile = () => {
                 </nav>
             </header>
             <Headers />
-                <div className='mt-[10rem] p-4 bg-slate-300 max-w-[90%] mx-auto mb-20'>
+                <div className='mt-[10rem] p-4 bg-slate-700 max-w-[90%] mx-auto mb-20'>
                     <InputEditProfile />
                     <InputEditAccount />     
                 </div>  
            <BottomNav />
-        </>
+        </div>
     )
 }
+
+export default EditProfile;

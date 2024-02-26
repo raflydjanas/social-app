@@ -1,6 +1,6 @@
-import IconsPhoto from '../assets/icons8-photo-64.png'
+import IconsPhoto from '../assets/icons8-photo-64.png';
 
-export const ImageEditProfile = () => {
+const ImageEditProfile = () => {
 
     return (
         <>
@@ -8,3 +8,5 @@ export const ImageEditProfile = () => {
         </>
     )
 }
+
+export default ImageEditProfile;

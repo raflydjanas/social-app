@@ -1,12 +1,21 @@
-import { ImageProfile } from "./ImageProfile"
-export const DescriptionProfile = () => {
+import  ImageProfile  from "./ImageProfile";
+
+
+const DescriptionProfile = () => {
+    const email = localStorage.getItem('email');
+
     return (
         <>
             <ImageProfile />
                 <div className="ml-[5.5rem] pt-5">    
-                    <h3 className="text-center text-2xl text-white">Rafly djanas</h3>
-                    <p className="text-base text-center text-font pt-1">username</p>
+                    <div className="text-center text-md text-white ml-10">
+                        {email}
+                    </div>
+                    <p className="text-base text-center text-font pt-1 pl-[3rem]">title</p>
                 </div>
         </>
+    
     )
 }
+
+export default DescriptionProfile;
