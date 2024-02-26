@@ -1,6 +1,5 @@
 import  ImageProfile  from "./ImageProfile";
 
-
 const DescriptionProfile = () => {
     const email = localStorage.getItem('email');
 
@@ -11,7 +10,9 @@ const DescriptionProfile = () => {
                     <div className="text-center text-md text-white ml-10">
                         {email}
                     </div>
-                    <p className="text-base text-center text-font pt-1 pl-[3rem]">title</p>
+                    <p className="text-base text-center text-font pt-1 pl-[3rem]">
+                        Status
+                    </p>
                 </div>
         </>
     

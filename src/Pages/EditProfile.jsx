@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { AiOutlineImport } from "react-icons/ai";
 import  Headers  from '../components/Headers';
 import  InputEditProfile  from '../components/InputEditProfile';
-import  InputEditAccount   from '../components/InputEditAccount';
 import BottomNav from '../components/BottomNav';
 import MyApp from "../components/Elements/MyApp/MyApp";
 
@@ -24,9 +23,8 @@ const EditProfile = () => {
             </header>
             <Headers />
                 <div className='mt-[10rem] p-4 bg-slate-700 max-w-[90%] mx-auto mb-20'>
-                    <InputEditProfile />
-                    <InputEditAccount />     
-                </div>  
+                    <InputEditProfile />  
+                </div>
            <BottomNav />
         </div>
     )

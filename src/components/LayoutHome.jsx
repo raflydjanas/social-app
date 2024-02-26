@@ -12,13 +12,15 @@ import BottomNav from './BottomNav';
         <main>
             <div className="bg-dark relative">
                 <img src={beckground} alt="baground" className="rounded-t-lg mt-[4.8rem] w-full h-44 object-cover" />
-                    <div className="relative h-[26rem]">                         
-                        <DescriptionProfile />
-                        <div className="border border-purple mt-12"></div> 
-                        <Cound />
-                        <DescriptionAcound />
-                        <ButtonNavigate />
-                    </div>
+                <div className="relative h-[26rem]">                         
+                    <DescriptionProfile />
+                    <div className="border border-purple mt-12"></div> 
+                    <Cound />
+                    <DescriptionAcound />
+                    <ButtonNavigate>
+                        
+                    </ButtonNavigate>
+                </div>
                     <CardImg />
             </div>
             <BottomNav />
