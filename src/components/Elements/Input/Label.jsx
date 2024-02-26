@@ -3,7 +3,7 @@
 const Label = ({ children, htmlFor }) => {
 
     return (
-        <label htmlFor={htmlFor} className='text-sm font-semibold'>
+        <label htmlFor={htmlFor} className='text-sm font-semibold text-font'>
             {children}
         </label>
     )
