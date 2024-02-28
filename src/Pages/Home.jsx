@@ -1,15 +1,13 @@
-import  NavBar  from "../components/Fragments/NavBar";
-import  LayoutHome  from "../components/LayoutHome"; 
-import { useParams } from "react-router-dom"; 
+import NavBar from '../components/Fragments/NavBar';
+import LayoutHome from '../components/LayoutHome';
 
 const Home = () => {
-    const { name } = useParams();
-    return (
-        <>         
-            <NavBar />
-            <LayoutHome name={name} />
-        </>
-    )
-}
+   return (
+      <>
+         <NavBar />
+         <LayoutHome  />
+      </>
+   );
+};
 
 export default Home;

@@ -1,30 +1,50 @@
-import { Link } from "react-router-dom";
-import  Button  from "../components/Elements/Button/IndexButton";
+import { Tabs, TabList, TabPanels, Tab, TabPanel, } from '@chakra-ui/react';
 import IconPhoto from '../assets/icons8-photo-64.png';
+import CardImg from './cardImg';
+import CardVideo from './Fragments/CardVideo';
+import CardBlog from './Fragments/CardBlog';
 
 const ButtonNavigate = () => {
-
-    return (
-        <div className="bg-slate-700 mt-6 mx-auto w-[70%] rounded-full">
-            <div className="flex justify-between items-center gap-4 p-4">          
-                <Button classname=" rounded-full active:bg-purple">
-                    <Link to="/home">
-                      <img src={IconPhoto} alt="" className='h-8'/>
-                    </Link>
-                </Button>
-                <Button classname=" rounded-full active:bg-purple">
-                    <Link to="/home">
-                      <img src={IconPhoto} alt="" className='h-8'/>
-                    </Link>
-                </Button>
-                <Button classname=" rounded-full active:bg-purple">
-                    <Link to="/home">
-                      <img src={IconPhoto} alt="" className='h-8'/>
-                    </Link>
-                </Button>
-            </div>
-        </div>
-    )
-}
+   return (
+         <Tabs variant='soft-rounded' >
+            <TabList className='p-3 bg-slate-800 mt-7 w-[90%] mx-auto rounded-full'>
+               <div className='flex mx-auto'>
+                  <Tab>
+                     <img
+                        src={IconPhoto}
+                        alt=''
+                        className='rounded-full h-9'
+                     />
+                  </Tab>
+                  <Tab>
+                  <img
+                     src={IconPhoto}
+                     alt=''
+                     className='rounded-full h-9'
+                  />
+                  </Tab>
+                  <Tab>
+                  <img
+                     src={IconPhoto}
+                     alt=''
+                     className='rounded-full h-9'
+                  />
+                  </Tab>
+               </div>
+            </TabList>
+            <TabPanels>
+               <TabPanel>
+                  <CardImg />
+               </TabPanel>
+               <TabPanel>
+                  <CardVideo />
+               </TabPanel>
+               <TabPanel>
+                  <CardBlog />
+               </TabPanel>
+            </TabPanels>
+         </Tabs>
+   );
+};
 
 export default ButtonNavigate;
