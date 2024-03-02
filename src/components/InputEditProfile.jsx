@@ -1,14 +1,8 @@
+
 import FormInput from '../components/Elements/Input/FormInput';
 import Button from './Elements/Button/IndexButton';
 
 const InputEditProfile = () => {
-
-   const InputEditProfile = async (e) => {
-      e.preventDefault();
-
-      const name = e.target.username.value;
-      alert('success to edit profile');
-   };
 
    return (
       <form onSubmit={InputEditProfile}>

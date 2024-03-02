@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'; 
 import beckground from '../assets/bg.jpg';
 import DescriptionProfile from './DescriptionProfile';
 import Cound from './Cound';
@@ -8,20 +7,6 @@ import BottomNav from './BottomNav';
 
 
 const LayoutHome = () => {
-   const [name, setName] = useState('Ralyan');
-   const fetchData = async () => {
-      try {
-         const response = await fetch('https://api-mini-socmed.notneet.my.id/users/1');
-         const data = await response.json();
-         // setName(data.name);
-      } catch (error) {
-         console.log(error);
-      }
-   }
-
-   useEffect( () => {
-      fetchData();
-   }, []);
 
    return (
       <main>
@@ -32,7 +17,7 @@ const LayoutHome = () => {
                className='rounded-t-lg mt-[4.8rem] w-full h-44 object-cover'
             />
             <div className='relative h-[26rem]'>
-               <DescriptionProfile name={name} />
+               <DescriptionProfile />
                <div className='border border-purple mt-12'></div>
                <Cound />
                <DescriptionAcound />

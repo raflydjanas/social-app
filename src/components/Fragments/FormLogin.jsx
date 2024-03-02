@@ -1,56 +1,31 @@
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import { useState } from 'react';
+import { login } from '../../services/auth.services';
 import Button from '../Elements/Button/IndexButton';
 import FormInput from '../Elements/Input/FormInput';
-import axios from 'axios';
 
 const FormLogin = () => {
-   const navigate = useNavigate('');
-   const [accessToken, setAccessToken] = useState('');
+   const navigate = useNavigate('')
+   const [messageErr, setMessageErr] = useState('');
 
-   useEffect(() => {
-      const token = localStorage.getItem('accessToken');
-      console.log(token);
-      if (token) {
-         setAccessToken(token);
-      }
-   }, []);
    const handleLogin = async (e) => {
       e.preventDefault();
 
       try {
-         const email = e.target.email.value;
-         const password = e.target.password.value;
+         const data = {
+            email: e.target.email.value,
+            password: e.target.password.value,
+         }
 
-         if (email && password) {
-            localStorage.setItem('email ', email);
-
-            let URl = 'https://api-mini-socmed.notneet.my.id/auth/login';
-            let payload = {
-               email: email,
-               password: password,
-            };
-
-            if (payload.password === '') {
-               delete payload.password;
-            }
-
-            const response = await axios.post(URl, payload, {
-               headers: {
-                  Authorization: `Bearer ${accessToken}`,
-               },
-            });
-
-
-            if (response) {
+         login(data, (status, res) => {
+            if(status) {
+               localStorage.setItem('token', res);
                navigate('/home');
             } else {
-               alert('failed to submit');
+               setMessageErr(res.response.data.message);
             }
-         } else {
-            alert('place enter your email and password');
-         }
+         })
+
       } catch (error) {
          console.log(error);
       }
@@ -73,6 +48,7 @@ const FormLogin = () => {
          <Button classname='bg-purple w-full' type='submit'>
             Login
          </Button>
+         {messageErr && <p className='text-red-500 text-center mt-5 text-base'>{messageErr}</p>}
       </form>
    );
 };

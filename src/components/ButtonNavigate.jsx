@@ -1,4 +1,6 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel, } from '@chakra-ui/react';
+import { BiSolidVideos } from "react-icons/bi";
+import { FaBloggerB } from "react-icons/fa";
 import IconPhoto from '../assets/icons8-photo-64.png';
 import CardImg from './cardImg';
 import CardVideo from './Fragments/CardVideo';
@@ -17,18 +19,10 @@ const ButtonNavigate = () => {
                      />
                   </Tab>
                   <Tab>
-                  <img
-                     src={IconPhoto}
-                     alt=''
-                     className='rounded-full h-9'
-                  />
+                  <BiSolidVideos size={40} className='rounded-full h-9'/>
                   </Tab>
                   <Tab>
-                  <img
-                     src={IconPhoto}
-                     alt=''
-                     className='rounded-full h-9'
-                  />
+                  <FaBloggerB size={30} className='rounded-full h-9' />
                   </Tab>
                </div>
             </TabList>
