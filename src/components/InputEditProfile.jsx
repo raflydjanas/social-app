@@ -1,8 +1,19 @@
-
 import FormInput from '../components/Elements/Input/FormInput';
 import Button from './Elements/Button/IndexButton';
 
 const InputEditProfile = () => {
+
+   const InputEditProfile = (e) => {
+      e.preventDefault();
+
+      const username = e.target.username.value;
+      const title = e.target.title.value;
+      const description = e.target.description.value;
+
+         localStorage.setItem('username', username);
+         localStorage.setItem('title', title);
+         localStorage.setItem('description', description);
+   }
 
    return (
       <form onSubmit={InputEditProfile}>

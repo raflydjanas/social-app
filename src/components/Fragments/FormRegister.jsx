@@ -25,7 +25,7 @@ const FormRegister = () => {
 
             const response = await axios.post(URl, payload);
             if (response) {
-               navigate('/editProfile');
+               navigate('/');
             } else {
                alert('failed to submit');
             }
